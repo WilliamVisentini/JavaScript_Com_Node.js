@@ -2,19 +2,11 @@ const fs = require('fs');
 const caminhoArquivo = process.argv;
 const link = caminhoArquivo[2];
 
+// console.log('link = ' + link);
+// console.log('caminho = ' + caminhoArquivo);
+
 fs.readFile(link, 'utf-8', (erro, texto) => {
-  if (erro) {
-    console.error('Erro ao ler o arquivo:', erro);
-    return;
-  }
-  verificaPalavrasDuplicadas(texto);
+  console.log(texto);
 });
 
-function verificaPalavrasDuplicadas(texto) {
-  const arrayDePalavras = texto.split(' ');
-  const resultado = {};
-  arrayDePalavras.forEach((palavra) => {
-    resultado[palavra] = (resultado[palavra] || 0) + 1;
-  });
-  console.log(resultado);
-}
+console.log();
